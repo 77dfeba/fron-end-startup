@@ -1,7 +1,6 @@
 const startRoundBtn = document.querySelector("#start-this-round-btn")
 const gestureDialog = document.querySelector("#select-dialog")
 const selectForm = document.querySelector("#select-form")
-const submitSelectBtn = document.querySelector("#submit-select")
 const gestureSelect = document.querySelector("#gesture-select")
 const resultOfThisRound = document.querySelector(".result-of-this-round")
 
@@ -9,7 +8,7 @@ const GestureImg = {
     rock: "./images/rock.png", scissor: "./images/scissor.png", paper: "./images/paper.png",
 }
 
-const GesturesNames = ["rock", "scissor", "paper"];
+const GesturesNames = ["rock", "scissor", "paper"]
 
 const Name = {
     computer: "机器人", my: "你"
@@ -30,13 +29,15 @@ let roundNum = 1
 
 function initGame() {
     startRoundBtn.addEventListener("click", () => {
-        gestureDialog.showModal();
+        gestureDialog.showModal()
     })
-    selectForm.addEventListener("submit", () => {
+    selectForm.addEventListener("submit", (event) => {
+        /* 防止submit重新跳转 */
+        event.preventDefault()
         const myGesture = gestureSelect.value
-        const computerGesture = randomGesture()
-        renderMyGesture()
-        renderComputerGesture()
+        renderMyGesture(myGesture)
+        const computerGesture = renderComputerGesture()
+        console.log(computerGesture + " " + myGesture)
         gestureDialog.close()
         judgeRound(myGesture, computerGesture)
     })
@@ -44,7 +45,7 @@ function initGame() {
 
 
 function randomGesture() {
-    return GesturesNames[Math.random() * 3]
+    return GesturesNames[Math.floor(Math.random() * 3)]
 }
 
 function renderMyGesture(gesture) {
@@ -55,6 +56,7 @@ function renderMyGesture(gesture) {
 
 function renderComputerGesture() {
     const gestureName = randomGesture()
+    console.log("机器人" + gestureName)
     const gestureImg = GestureImg[gestureName]
     const wrapper = document.querySelector(".computer .gesture")
     wrapper.innerHTML = `<img class="computer-img" src=${gestureImg} alt=机器人手势""/>`
@@ -62,17 +64,18 @@ function renderComputerGesture() {
 }
 
 function renderScore() {
-    const computerScore = document.querySelector(".computer .score");
-    const myScore = document.querySelector(".my .score");
-    computerScore.innerHTML = `胜：${computerScore.win} | 负：${computerScore.lose}`;
-    myScore.innerHTML = `胜：${myScore.win} | 负：${myScore.lose}`;
+    const computerScoreDom = document.querySelector(".computer .score")
+    const myScoreDom = document.querySelector(".my .score")
+    computerScoreDom.innerHTML = `胜：${robotScore.win} | 负：${robotScore.lose}`
+    myScoreDom.innerHTML = `胜：${myScore.win} | 负：${myScore.lose}`
 }
 
 function renderRoundInfo(roundNum) {
-    const roundDom = document.querySelector(".round");
-    roundDom.innerHTML = `第${roundNum}回合`;
+    const roundDom = document.querySelector(".round")
+    roundDom.innerHTML = `第${roundNum}回合`
 }
 
+// 对局判断
 function judgeRound(my, computer) {
     let roundResult = ''
     if (my === computer) {
@@ -80,36 +83,36 @@ function judgeRound(my, computer) {
     } else {
         let isMyWin = true
         if (computer === "rock") {
-            isMyWin = my !== "scissor";
+            isMyWin = my === "paper"
         } else if (computer === "scissor") {
-            isMyWin = my === "rock";
+            isMyWin = my === "rock"
         } else {
-            isMyWin = my !== "rock";
+            isMyWin = my === "scissor"
         }
 
         if (isMyWin) {
-            roundResult = "本回合你赢";
-            myScore.win++;
-            robotScore.lose++;
+            roundResult = "本回合你赢"
+            myScore.win++
+            robotScore.lose++
         } else {
-            roundResult = "本回合机器人赢";
-            myScore.lose++;
-            robotScore.win++;
+            roundResult = "本回合机器人赢"
+            myScore.lose++
+            robotScore.win++
         }
     }
 
     /* 渲染结果 */
     resultOfThisRound.innerHTML = roundResult
     renderScore()
-    renderRoundInfo()
+    renderRoundInfo(roundNum)
 
     /* 处理游戏结果 */
-    roundNum++;
+    roundNum++
     if (robotScore.win >= maxEndRoundNum || myScore.win >= maxEndRoundNum) {
         if (robotScore.win > myScore.win) {
-            endGame("computer");
+            endGame("computer")
         } else if (myScore.win > robotScore.win) {
-            endGame("my");
+            endGame("my")
         } else {
             endGame()
         }
@@ -120,13 +123,14 @@ function judgeRound(my, computer) {
 function endGame(winner) {
     gestureDialog.close()
     startRoundBtn.style.display = 'none'
-    const resultOfTotalRound = document.querySelector(".result-of-total-round");
+    const resultOfTotalRound = document.querySelector(".result-of-total-round")
 
     if (!winner) {
-        resultOfTotalRound.innerHTML = "不错嘛，平局了";
+        resultOfTotalRound.innerHTML = "平局啦"
     } else {
-        resultOfTotalRound.innerHTML = `(≧v≦)o~~好棒，恭喜${Name[winner]}获得胜利！`;
+        resultOfTotalRound.innerHTML = `恭喜${Name[winner]}胜利`
     }
 }
 
 initGame()
+// todo：完成结束后重开，
