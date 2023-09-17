@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/fron-end-startup.iml" filepath="$PROJECT_DIR$/.idea/fron-end-startup.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javascript.iml" filepath="$PROJECT_DIR$/javascript.iml" />
+    </modules>
+  </component>
+</project>
