@@ -64,11 +64,11 @@ body {
     margin-top: 16px;
     font-weight: 500;
 }
-
+/* 电脑出手势旋转 */
 #main .game .computer .computer-img {
     transform: rotate(45deg);
 }
-
+/* 玩家出手势旋转 */
 #main .game .my .my-img {
     transform: scaleX(-1) rotate(45deg);
 }

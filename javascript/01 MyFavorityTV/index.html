@@ -2,22 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>我最喜欢的电影</title>
+    <title>我最喜欢的电影——奥本海默</title>
 </head>
-<body>
+<style>
+    .app {
+        background: #f3f3f3;
+        width: 1400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .overview {
+        background: #e6f4ff;
+        padding: 10px 20px;
+    }
+    .overview-img {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 350px;
+        height: 250px;
+        padding: 0 10px;
+        border-radius: 3px;
+    }
+    .main {
+        display: inline-flex;
+    }
+    .main div img {
+        width: 300px;
+    }
+</style>
+<body class="app">
 <div class="overview">
-<h1 class="title">奥本海默</h1>
+    <h1 class="title">奥本海默</h1>
+    <h4>美国2023年克里斯托弗·诺兰自编自导的电影</h4>
+    <div class="overview-img">
+        <img src="./images/overview_01.jpg" alt="">
+        <img src="./images/overview_02.jpg" alt="">
+        <img src="./images/overview_03.jpg" alt="">
+    </div>
 </div>
-<div class="main">
 
+<!-- 双栏 -->
+<div class="main">
+    <div>
+        <p>
+        《奥本海默》是克里斯托弗·诺兰自编自导的传记电影，由基里安·墨菲主演，于2023年7月21日在北美上映 ，8月30日在中国内地上映。
+        </p>
+        <p>
+        该片改编自Kai Bird、Martin J. Sherwin所著书籍《美国普罗米修斯：奥本海默的胜与悲》 ，讲述了美国“原子弹之父”罗伯特·奥本海默在“二战期间”领导研制原子弹的过程，以及他在二战结束后遭遇不公正听证会的故事 。
+        </p>
+    </div>
+    <div>
+        <img src="./images/main_right.jpg" alt="电影海报">
+    </div>
 </div>
-<div class="person-intro">
+<!-- 基本信息介绍列表 -->
+<div class="movie-base-intro">
 
 </div>
 
 <div class="actor-intro">
 
 </div>
-
 </body>
+<script>
+
+</script>
 </html>
