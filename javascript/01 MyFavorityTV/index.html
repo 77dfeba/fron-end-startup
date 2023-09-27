@@ -11,25 +11,70 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin: 0 auto;
     }
+
     .overview {
         background: #e6f4ff;
         padding: 10px 20px;
     }
+
     .overview-img {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        width: 350px;
-        height: 250px;
-        padding: 0 10px;
-        border-radius: 3px;
     }
+
+    .overview-img img {
+        width: 425px;
+        /*height: 250px;*/
+        padding: 0 5px;
+        border-radius: 20px;
+    }
+
     .main {
         display: inline-flex;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 10px 20px;
     }
+
     .main div img {
-        width: 300px;
+        width: 250px;
+    }
+
+    .main-content {
+        padding: 20px 25px;
+        text-indent: 4ch;
+    }
+
+    .main-content p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .row-item {
+        display: flex;
+        vertical-align: baseline;
+        /* 划分flex的比例 */
+        flex-basis: 40%;
+    }
+    .row-name {
+        font-weight: bold;
+        flex-basis: 30%;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+    .row-data {
+        color: #747474;
+        flex-basis: 80%;
     }
 </style>
 <body class="app">
@@ -43,15 +88,71 @@
     </div>
 </div>
 
-<!-- 双栏 -->
+<!-- 主要信息：双栏 -->
 <div class="main">
-    <div>
+    <div class="main-content">
         <p>
-        《奥本海默》是克里斯托弗·诺兰自编自导的传记电影，由基里安·墨菲主演，于2023年7月21日在北美上映 ，8月30日在中国内地上映。
+            《奥本海默》是克里斯托弗·诺兰自编自导的传记电影，由基里安·墨菲主演，于2023年7月21日在北美上映 ，8月30日在中国内地上映。
         </p>
         <p>
-        该片改编自Kai Bird、Martin J. Sherwin所著书籍《美国普罗米修斯：奥本海默的胜与悲》 ，讲述了美国“原子弹之父”罗伯特·奥本海默在“二战期间”领导研制原子弹的过程，以及他在二战结束后遭遇不公正听证会的故事 。
+            该片改编自Kai Bird、Martin J. Sherwin所著书籍《美国普罗米修斯：奥本海默的胜与悲》
+            ，讲述了美国“原子弹之父”罗伯特·奥本海默在“二战期间”领导研制原子弹的过程，以及他在二战结束后遭遇不公正听证会的故事
+            。
         </p>
+        <div class="row">
+            <div class="row-item">
+                <span class="row-name">中文名</span>
+                <span class="row-data">奥本海默</span>
+            </div>
+            <div class="row-item">
+                <span class="row-name">制片人</span>
+                <span class="row-data">
+                    <a href="https://baike.baidu.com/item/Thomas%20Hayslip/60766207?fromModule=lemma_inlink">
+                        Thomas Hayslip
+                    </a>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row-item">
+                <span class="row-name">外文名</span>
+                <span class="row-data">Oppenheimer</span>
+            </div>
+            <div class="row-item">
+                <span class="row-name">主演</span>
+                <span class="row-data">基里安·墨菲</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row-item">
+                <span class="row-name">类型</span>
+                <span class="row-data">剧情、传记、历史</span>
+            </div>
+            <div class="row-item">
+                <span class="row-name">时长</span>
+                <span class="row-data">180分钟</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row-item">
+                <span class="row-name">发行公司</span>
+                <span class="row-data">环球影业</span>
+            </div>
+            <div class="row-item">
+                <span class="row-name">电影分级</span>
+                <span class="row-data">R级</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row-item">
+                <span class="row-name">导演</span>
+                <span class="row-data">克里斯托弗·诺兰</span>
+            </div>
+            <div class="row-item">
+                <span class="row-name">imdb编码</span>
+                <span class="row-data">tt15398776</span>
+            </div>
+        </div>
     </div>
     <div>
         <img src="./images/main_right.jpg" alt="电影海报">
@@ -59,9 +160,14 @@
 </div>
 <!-- 基本信息介绍列表 -->
 <div class="movie-base-intro">
+    <div class="title-wrapper">基本信息</div>
 
+    <div>
+        <span></span>
+        <span></span>
+    </div>
 </div>
-
+<!-- 演员信息 -->
 <div class="actor-intro">
 
 </div>
