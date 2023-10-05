@@ -1,0 +1,127 @@
+/* 样式重置 */
+body {
+    font-size: 16px;
+}
+
+input {
+    margin: 0;
+}
+
+
+/* 顶部和背景图 */
+.overview-img-wrapper {
+    display: flex;
+    width: 60%;
+    margin: 10px auto;
+    /* 等分放大缩小 */
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.overview-img-wrapper img {
+    width: 0;
+    flex-basis: 20%;
+    border-radius: 15px;
+    /* 配置使用动画类型 */
+    transition: transform 0.3s ease;
+}
+
+.overview-img-wrapper img:hover {
+    transform: rotate(18deg);
+}
+
+/* 表单 */
+.order-from-wrapper {
+    background-color: #f3f3f3;
+    padding: 24px 0;
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+}
+
+.order-from-wrapper .order-form {
+    width: auto;
+}
+
+.order-from-wrapper .order-form .form-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+/* 表单label */
+.order-from-wrapper .order-form .form-item .form-item-label {
+    margin-right: 16px;
+    flex-basis: 30%;
+    /* 要求右对齐 */
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.order-from-wrapper .order-form .form-item .form-item-label::after {
+    content: ": ";
+}
+
+/* 输入单选类型 */
+.order-from-wrapper .order-form .form-item .form-item-control {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.choose-radios {
+    display: flex;
+}
+
+.radio-item {
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+}
+
+/* 输入复选框 */
+.radio-item .radio-item-label, .checkbox-item .checkbox-item-label {
+    padding: 0 8px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+/* 按钮 */
+.btn-wrapper {
+    justify-content: center;
+    padding-top: 24px;
+}
+
+.btn-wrapper .btn.primary {
+    background-color: #1677ff;
+    color: #fff;
+}
+
+.btn-wrapper .btn {
+    height: 32px;
+    padding: 4px 15px;
+    border-radius: 4px;
+    margin-right: 12px;
+    border: 1px solid transparent;
+    outline: none;
+    cursor: pointer;
+}
+
+/* 回到顶部 */
+.scroll-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+    width: 75px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    color: lightgrey;
+    background: #222222;
+}
