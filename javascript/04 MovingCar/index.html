@@ -2,9 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>奔跑的小车车</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<div class="main">
+    <div class="control">
+        <div class="control-panel">
+            <div class="control-item">
+                <label for="speed">速度：</label>
+                <select name="speed" id="speed">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <div class="control-item">
+                <label for="carType">车型：</label>
+                <select name="carType" id="carType">
+                    <option value="tractors">拖拉机</option>
+                    <option value="truck">卡车</option>
+                    <option value="motor">摩托车</option>
+                    <option value="roadster">跑车</option>
+                    <option value="electric motorcycle">电动车</option>
+                    <option value="bike">自行车</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="game">
+        <div class="game-map">
+            <img class="car" src="./images/car1.png" alt="car image">
+        </div>
+    </div>
+</div>
 </body>
 </html>
