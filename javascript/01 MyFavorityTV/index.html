@@ -3,80 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>我最喜欢的电影——奥本海默</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./index.css">
 </head>
-<style>
-    .app {
-        background: #f3f3f3;
-        width: 1400px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin: 0 auto;
-    }
-
-    .overview {
-        background: #e6f4ff;
-        padding: 10px 20px;
-    }
-
-    .overview-img {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .overview-img img {
-        width: 425px;
-        /*height: 250px;*/
-        padding: 0 5px;
-        border-radius: 20px;
-    }
-
-    .main {
-        display: inline-flex;
-        background: rgba(255, 255, 255, 0.9);
-        padding: 10px 20px;
-    }
-
-    .main div img {
-        width: 250px;
-    }
-
-    .main-content {
-        padding: 20px 25px;
-        text-indent: 4ch;
-    }
-
-    .main-content p {
-        font-size: 16px;
-        line-height: 26px;
-    }
-
-    .row {
-        display: flex;
-        justify-content: space-between;
-        font-size: 14px;
-        padding: 12px;
-    }
-
-    .row-item {
-        display: flex;
-        vertical-align: baseline;
-        /* 划分flex的比例 */
-        flex-basis: 40%;
-    }
-    .row-name {
-        font-weight: bold;
-        flex-basis: 30%;
-        margin: 0;
-        padding: 0;
-        border: 0;
-    }
-    .row-data {
-        color: #747474;
-        flex-basis: 80%;
-    }
-</style>
 <body class="app">
 <div class="overview">
     <h1 class="title">奥本海默</h1>
@@ -154,7 +83,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="main-img-wrapper">
         <img src="./images/main_right.jpg" alt="电影海报">
     </div>
 </div>
