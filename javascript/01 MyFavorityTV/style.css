@@ -1,9 +1,10 @@
 /* 全局 */
-.app {
+body {
     background: #f3f3f3;
     min-width: 1200px;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
 }
+
 
 /* 概览图 */
 .overview {
@@ -42,9 +43,16 @@
 
 .main-content {
     width: 70%;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 10px 20px;
+    /*background: rgba(255, 255, 255, 0.9);*/
     margin: 0 auto;
+}
+
+.main-content .item {
+    background-color: #fff;
+    border: solid 1px #e5e5e5;
+    box-shadow: 0 2px 3px -2px #d5d5d5;
+    padding: 32px 16px;
+    margin-top: 12px;
 }
 
 .main-content .overall-intro {
@@ -89,9 +97,14 @@
     text-indent: 4ch;
 }
 
+
 .main-content p {
     font-size: 16px;
-    line-height: 26px;
+    line-height: 28px;
+}
+
+.overall-desc-wrapper {
+    margin-top: 25px;
 }
 
 /* 介绍图片 */
@@ -100,10 +113,6 @@
     flex-shrink: 0;
     width: 0px;
 }
-
-/*.main-img-wrapper {*/
-/*    margin: auto 0;*/
-/*}*/
 
 /* 信息表格 */
 .row {
@@ -132,3 +141,54 @@
     color: #747474;
     flex-basis: 80%;
 }
+
+/* 基本信息 */
+.main-content .title-wrapper {
+    /* 使用一个宽的边线展示出蓝色方块 */
+    border-left: 10px solid #003eb3;
+    margin: 0px -16px;
+    padding: 0px 16px;
+    display: flex;
+    align-items: center;
+}
+
+.main-content .title-wrapper .title {
+    font-size: 150%;
+}
+
+.main-content .line {
+    flex-grow: 1;
+    background: #eee;
+    height: 1px;
+    margin-left: 12px;
+}
+
+.main-content .base-intro .content-wrapper {
+    margin-top: 24px;
+    padding: 0px 10px;
+}
+
+/* 配置每行灰色线 */
+.main-content .base-intro .content-wrapper .row {
+    display: flex;
+    font-size: 6px;
+    padding: 12px 0px;
+    border-bottom: 1px dotted #ccc;
+}
+
+.main-content .base-intro .content-wrapper .row .col {
+    flex-basis: 50%;
+    display: flex;
+}
+
+.main-content .base-intro .content-wrapper .row .col .row-name {
+    color: #999;
+    font-weight: bold;
+    width: 80px;
+    flex-basis: 15%;
+}
+.main-content .base-intro .content-wrapper .row .col .row-data {
+    color: #000;
+}
+
+/* 演员信息 */
