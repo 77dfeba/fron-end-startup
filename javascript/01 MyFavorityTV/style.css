@@ -1,0 +1,134 @@
+/* 全局 */
+.app {
+    background: #f3f3f3;
+    min-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 概览图 */
+.overview {
+    background: #e6f4ff;
+    padding: 32px 0px;
+}
+
+.overview-wrapper {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 200%;
+}
+
+.tip {
+    margin-top: 12px;
+    color: #626675;
+}
+
+.overview-img {
+    display: flex;
+    justify-content: space-between;
+}
+
+.overview-img img {
+    flex-basis: 32%;
+    width: 0;
+    margin-top: 16px;
+    /*margin-bottom: 24px;*/
+    border-radius: 8px;
+}
+
+/* 中间部分 */
+
+.main-content {
+    width: 70%;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    margin: 0 auto;
+}
+
+.main-content .overall-intro {
+    display: flex;
+}
+
+.main-content .overall-intro .overall-intro-text {
+    margin-right: 18px;
+}
+
+/* 介绍统计 */
+.overall-static {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+    margin-bottom: 24px;
+}
+
+.overall-static .overall-static-item {
+    margin-left: 8px;
+}
+
+
+/* 不是最后一子元素 */
+.main-content .overall-intro .overall-static .overall-static-item:not(:last-child) {
+    border-right: 1px solid #eee;
+    padding-right: 8px;
+}
+
+.main-content .overall-intro .overall-static .overall-static-item .name {
+    color: #519cea;
+    font-weight: 500;
+}
+
+.main-content .overall-intro .overall-static .overall-static-item .num {
+    color: #888;
+}
+
+/* 介绍文字描述 */
+.main-content .overall-desc {
+    padding: 20px 25px;
+    text-indent: 4ch;
+}
+
+.main-content p {
+    font-size: 16px;
+    line-height: 26px;
+}
+
+/* 介绍图片 */
+.main-content .overall-intro .overall-intro-image {
+    flex-basis: 25%;
+    flex-shrink: 0;
+    width: 0px;
+}
+
+/*.main-img-wrapper {*/
+/*    margin: auto 0;*/
+/*}*/
+
+/* 信息表格 */
+.row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 12px;
+}
+
+.row-item {
+    display: flex;
+    vertical-align: baseline;
+    /* 划分flex的比例 */
+    flex-basis: 40%;
+}
+
+.row-name {
+    font-weight: bold;
+    flex-basis: 30%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.row-data {
+    color: #747474;
+    flex-basis: 80%;
+}
