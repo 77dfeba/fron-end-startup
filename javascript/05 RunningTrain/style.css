@@ -1,0 +1,56 @@
+html, body {
+    height: 100%;
+}
+
+/* 主界面 */
+.main {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6f4ff;
+}
+
+/* 控制面板 */
+.main .control-panel {
+    display: flex;
+    width: 1000px;
+    flex-basis: 120px;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .control-panel .control-item {
+    display: flex;
+    /* 配置居中 */
+    flex-grow: 1;
+    font-size: 16px;
+    font-weight: bold;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* 游戏 */
+.main .game {
+    display: flex;
+    /* 默认放大game渔区域 */
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .game .game-map {
+    display: flex;
+    height: 95%;
+    width: 1100px;
+    position: relative;
+    border: 2px solid #000;
+    border-radius: 2px;
+}
+
+/* 奖励食物 */
+.bonus {
+    width: 32px;
+    position: absolute;
+}
