@@ -58,7 +58,7 @@ html, body {
     height: 500px;
     width: 800px;
     position: relative;
-    border: 5px solid #222;
+    border: 3px solid #222;
 }
 
 .main .game .game-map .car {

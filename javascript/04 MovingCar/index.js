@@ -95,6 +95,7 @@ function moveCar(keyCode) {
     // console.log('小车移动' + keyCode)
     if (!checkInRange(keyCode)) {
         alertOutOfRange()
+        return
     }
     // 判断按键方向，移动车头
     switch (keyCode) {
@@ -183,6 +184,17 @@ function renderCarChange() {
 
 /* 检查车辆越界和提醒 */
 function checkInRange(keyCode) {
+    const carRect = carDom.getBoundingClientRect()
+    const mapRect = gameMapDom.getBoundingClientRect()
+    if (carRect.left <= mapRect.left && keyCode === moveKeyCodes.left) {
+        return false
+    } else if (carRect.right >= mapRect.right && keyCode === moveKeyCodes.right) {
+        return false
+    } else if (carRect.top <= mapRect.top && keyCode === moveKeyCodes.up) {
+        return false
+    } else if (carRect.bottom >= mapRect.bottom && keyCode === moveKeyCodes.down) {
+        return false
+    }
     return true
 }
 
