@@ -1,0 +1,86 @@
+/* 初始化整个DOM */
+html, body {
+    height: 100%;
+}
+
+/* 主界面 */
+.main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #e6f4ff;
+}
+
+/* 标题 */
+.main .game-title {
+    display: flex;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 20px auto;
+}
+
+/* 控制元素选择 */
+.main .control {
+    display: flex;
+    flex-basis: 120px;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 24px;
+}
+
+.main .control .control-panel {
+    display: flex;
+    width: 800px;
+}
+
+.main .control .control-panel .control-item {
+    flex-grow: 1;
+}
+
+.main .control .control-panel .control-item select {
+    width: 120px;
+    font-size: 20px;
+}
+
+
+/* game区域 */
+.main .game {
+    display: flex;
+    /* 能放大 */
+    flex-grow: 1;
+    /* ??? */
+    justify-content: center;
+    align-items: center;
+}
+
+.main .game .game-map {
+    height: 500px;
+    width: 800px;
+    position: relative;
+    border: 3px solid #222;
+}
+
+.main .game .game-map .car {
+    height: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* 车移动动画：瞬间旋转 */
+.main .game .game-map .car-right {
+    transform: rotate(0deg);
+}
+
+.main .game .game-map .car-up {
+    transform: rotate(-90deg);
+}
+
+.main .game .game-map .car-down {
+    transform: rotate(90deg);
+}
+
+.main .game .game-map .car-left {
+    transform: scale(-1, 1);
+}
