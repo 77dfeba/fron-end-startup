@@ -6,12 +6,12 @@ const moveKeyCodes = {
     down: 40,
 }
 const carTypeImgPath = {
-    tractors: './images/car1.png',
-    truck: './images/car2.png',
-    motor: './images/car3.png',
-    roadster: './images/car4.png',
-    electricMotor: './images/car5.png',
-    bike: './images/car6.png'
+    tractors: './images/car1.webp',
+    truck: './images/car2.webp',
+    motor: './images/car3.webp',
+    roadster: './images/car4.webp',
+    electricMotor: './images/car5.webp',
+    bike: './images/car6.webp'
 }
 
 // 全局相关DOM和变量
@@ -57,17 +57,22 @@ function carTypeChangeListener() {
 /* 车辆控制 */
 function moveKeyListener() {
     window.addEventListener('keydown', function (event) {
+        // 让选择器失焦
+        speedSelectDom.blur()
+        carTypeSelectDom.blur()
         const keyCode = event.keyCode
         // 移动车
         if (Object.values(moveKeyCodes).includes(keyCode)) {
             moveCar(keyCode)
         }
+        // 阻止事件冒泡变更选择器
+        event.preventDefault()
     })
 }
 
 /* 按键响应 */
 function moveCar(keyCode) {
-    console.log('小车移动' + keyCode)
+    // console.log('小车移动' + keyCode)
     if (!checkInRange(keyCode)) {
         alertOutOfRange()
     }
@@ -125,8 +130,8 @@ function renderCarMove(direction) {
     let valPx, valNumber
     if (direction === 'left' || direction === 'right') {
         valPx = computedStyle.left
-        console.log('左右情况')
-        console.log(valPx)
+        // console.log('左右情况')
+        // console.log(valPx)
         // 读取具体属性px前面的数值
         valNumber = parseInt(valPx.slice(0, valPx.length - 2))
         if (direction === 'left') {
@@ -140,8 +145,8 @@ function renderCarMove(direction) {
     // 上下移动
     else {
         valPx = computedStyle.top
-        console.log('上下情况')
-        console.log(valPx)
+        // console.log('上下情况')
+        // console.log(valPx)
         valNumber = parseInt(valPx.slice(0, valPx.length - 2))
         if (direction === 'up') {
             newTop = valNumber - parseInt(speed)
