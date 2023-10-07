@@ -26,6 +26,10 @@ let speed = 1
 let carType = ''
 let carDirection = 'right'
 
+// 存储车状态key
+const gameStorageKey = '77dfeba_demo4_key'
+
+
 /* 游戏初始化 */
 function init() {
     // 获取dom元素
@@ -37,6 +41,19 @@ function init() {
     carSpeedChangeListener()
     carTypeChangeListener()
     moveKeyListener()
+    // 处理存储游戏状态
+    const saveData = JSON.parse(localStorage.getItem(gameStorageKey))
+    if (saveData) {
+        speedSelectDom.value = saveData.speed
+        speed = saveData.speed
+        carTypeSelectDom.value = saveData.carType
+        carType = saveData.carType
+        carDom.style.left = saveData.position.left
+        carDom.style.top = saveData.position.top
+        carDirection = saveData.headDirection
+        renderCarChange()
+        renderCarHeadChange()
+    }
 }
 
 
@@ -44,6 +61,7 @@ function init() {
 function carSpeedChangeListener() {
     speedSelectDom.addEventListener('change', function (event) {
         speed = speedSelectDom.value
+        saveGame()
     })
 }
 
@@ -51,6 +69,7 @@ function carTypeChangeListener() {
     carTypeSelectDom.addEventListener('change', function (event) {
         carType = carTypeSelectDom.value
         renderCarChange()
+        saveGame()
     })
 }
 
@@ -67,6 +86,7 @@ function moveKeyListener() {
         }
         // 阻止事件冒泡变更选择器
         event.preventDefault()
+        saveGame()
     })
 }
 
@@ -94,12 +114,12 @@ function moveCar(keyCode) {
             // carDirection = undefined
             break;
     }
-    changeCarHead()
+    renderCarHeadChange()
     renderCarMove(carDirection)
 }
 
 /* 使用css样式修改车头移动 */
-function changeCarHead() {
+function renderCarHeadChange() {
     // 每次清空后只添加一个class样式
     carDom.classList.remove('car-left', 'car-right', 'car-up', 'car-down',)
     switch (carDirection) {
@@ -168,6 +188,26 @@ function checkInRange(keyCode) {
 
 function alertOutOfRange() {
     alert('您的小车越界了，请返回！')
+}
+
+/* 存储游戏数据 */
+function saveGame() {
+    const curSpeed = speedSelectDom.value;
+    const curCarType = carTypeSelectDom.value;
+    const carPositionLeft = carDom.style.left;
+    const carPositionTop = carDom.style.top;
+
+    const objToSave = {
+        speed: curSpeed,
+        carType: curCarType,
+        position: {
+            left: carPositionLeft,
+            top: carPositionTop
+        },
+        headDirection: carDirection,
+    }
+
+    localStorage.setItem(gameStorageKey, JSON.stringify(objToSave));
 }
 
 init()
