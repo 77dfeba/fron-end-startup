@@ -11,6 +11,15 @@ html, body {
     background-color: #e6f4ff;
 }
 
+/* 标题 */
+.main .game-title {
+    display: flex;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 20px auto;
+}
+
 /* 控制元素选择 */
 .main .control {
     display: flex;
@@ -54,6 +63,9 @@ html, body {
 
 .main .game .game-map .car {
     height: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 /* 车移动动画：瞬间旋转 */
