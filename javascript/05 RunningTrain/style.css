@@ -54,3 +54,63 @@ html, body {
     width: 32px;
     position: absolute;
 }
+
+
+/* 车厢 */
+.main .game .game-map .train-node {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: lightslategray;
+    /* 使用radius圆角画出车车 */
+    border-top-right-radius: 6px; /* 14 */
+    border-bottom-right-radius: 6px;
+    border-top-left-radius: 2px;
+}
+
+.main .game .game-map .train-head {
+    border-top-right-radius: 16px;
+}
+
+.main .game .game-map .train-node .window-list {
+    position: absolute;
+    display: flex;
+    left: 2px;
+    top: 6px;
+}
+
+
+.main .game .game-map .train-node .window-list .window-item {
+    width: 4px;
+    height: 8px;
+    background: #eeeeee;
+    border: 1px solid #4b5f70;
+    border-radius: 2px;
+}
+
+.main .game .game-map .train-node .line {
+    position: absolute;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    height: 2px;
+    background: #eee;
+    border-radius: 2px;
+}
+
+/* 旋转动画 */
+.main .game .game-map .car-right {
+    transform: rotate(0deg);
+}
+
+.main .game .game-map .car-up {
+    transform: rotate(-90deg);
+}
+
+.main .game .game-map .car-down {
+    transform: rotate(90deg);
+}
+
+.main .game .game-map .car-left {
+    transform: scale(-1, 1);
+}
