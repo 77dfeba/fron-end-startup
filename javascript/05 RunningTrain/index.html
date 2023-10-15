@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>火车快跑🚆</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="main">
+    <div class="control-panel">
+        <div class="control-item">
+            <label for="playBGM">
+                是否播放背景音乐
+                <select id="playBGM">
+                    <option value="on">开启</option>
+                    <option value="off" selected>关闭</option>
+                </select>
+            </label>
+        </div>
+        <div class="control-item">
+            <label for="score">
+                得分：
+                <span class="score" id="score">0</span>
+            </label>
+        </div>
+    </div>
+
+    <div class="game">
+        <div class="game-map">
+            <!-- 火车默认长度3 -->
+            <div class="train-node">
+                <ul class="window-list">
+                    <li class="window-item"></li>
+                    <li class="window-item"></li>
+                </ul>
+                <div class="line"></div>
+            </div>
+            <div class="train-node">
+                <ul class="window-list">
+                    <li class="window-item"></li>
+                    <li class="window-item"></li>
+                </ul>
+                <div class="line"></div>
+            </div>
+            <div class="train-node train-head">
+                <ul class="window-list">
+                    <li class="window-item"></li>
+                    <li class="window-item"></li>
+                </ul>
+                <div class="line"></div>
+            </div>
+<!--            <img class="bonus" src="./images/bonus.png" alt="bonus">-->
+        </div>
+
+    </div>
+</div>
+<audio id="bgm" src="./audios/bgm.mp3" loop></audio>
+<script src="./index.js"></script>
+</body>
+</html>
